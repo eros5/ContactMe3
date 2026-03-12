@@ -54,12 +54,12 @@ padding-top:20px;
 }
 .credentials{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-gap:15px;
-margin-top:15px;
+grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+gap:8px;
+margin-top:8px;
 }
 .credentials img{
-max-height:70px;
+max-height:50px;
 margin:auto;
 }
 .stats{
