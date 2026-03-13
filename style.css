@@ -64,7 +64,6 @@ a.button:hover {
 .qr-wrapper {
   display: inline-block;
   border-radius: 20px;
-  padding: 12px;
   background: linear-gradient(145deg, #1e293b, #334155);
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -82,8 +81,9 @@ a.button:hover {
 
 .save-contact img {
   display: block;
-  width: 90%;
-  max-width: 260px;
+  width: 100%;
+  max-width: 300px;   /* larger than before */
+  height: auto;
   margin: auto;
   border-radius: 16px;
 }
@@ -95,22 +95,22 @@ a.button:hover {
 
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.4),
-                0 0 30px rgba(0, 200, 255, 0.2);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.5),
+                0 0 50px rgba(0, 200, 255, 0.25);
   }
   50% {
-    box-shadow: 0 0 20px rgba(0, 200, 255, 0.5),
-                0 0 40px rgba(0, 200, 255, 0.25);
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.6),
+                0 0 60px rgba(0, 200, 255, 0.3);
   }
   100% {
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.4),
-                0 0 30px rgba(0, 200, 255, 0.2);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.5),
+                0 0 50px rgba(0, 200, 255, 0.25);
   }
 }
 
 /* ====================== Credentials / Badges ====================== */
 .credentials-wrapper {
-  overflow-x: auto;  
+  overflow-x: auto;
   -ms-overflow-style: none;  
   scrollbar-width: none;     
 }
@@ -183,7 +183,7 @@ a.button:hover {
   }
 
   .save-contact img {
-    width: 85%;
+    max-width: 90%;  /* nearly full width on small screens */
   }
 
   .credentials {
@@ -197,7 +197,11 @@ a.button:hover {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 320px) {
+  .save-contact img {
+    max-width: 100%; /* fully span card width on very small screens */
+  }
+
   .contact {
     font-size: 13px;
   }
