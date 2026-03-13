@@ -55,10 +55,15 @@ a.button:hover {
   background: #475569;
 }
 
-/* ====================== Save Contact / QR ====================== */
+/* ====================== Save Contact / QR (Large + Glow) ====================== */
+.save-contact {
+  margin: 25px 0;
+  text-align: center;
+}
+
 .save-contact a.glow {
   display: inline-block;
-  border-radius: 16px;  /* rounded corners for QR */
+  border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: pulseGlow 2.5s infinite alternate;
 }
@@ -66,25 +71,13 @@ a.button:hover {
 .save-contact a.glow img {
   display: block;
   width: 100%;
-  max-width: 300px;   /* desktop max width */
+  max-width: 300px;
   height: auto;
   margin: auto;
   border-radius: 16px;
 }
 
-.save-contact a.glow:hover,
-.save-contact a.glow:active {
-  animation: none; 
-  box-shadow: 0 0 40px rgba(0, 200, 255, 0.8),
-              0 0 80px rgba(0, 200, 255, 0.4);
-  transform: scale(1.05);
-}
-
-/* ====================== Animated Glow ====================== */
-.glow {
-  animation: pulseGlow 2.5s infinite alternate;
-}
-
+/* Glow Animation */
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 25px rgba(0, 200, 255, 0.5),
@@ -98,6 +91,15 @@ a.button:hover {
     box-shadow: 0 0 25px rgba(0, 200, 255, 0.5),
                 0 0 50px rgba(0, 200, 255, 0.25);
   }
+}
+
+/* Intensify glow on hover/tap */
+.save-contact a.glow:hover,
+.save-contact a.glow:active {
+  animation: none;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.8),
+              0 0 80px rgba(0, 200, 255, 0.4);
+  transform: scale(1.05);
 }
 
 /* ====================== Credentials / Badges ====================== */
@@ -138,68 +140,43 @@ a.button:hover {
   width: 100%;
   max-width: 350px;
   margin: 20px auto 0;
-  overflow: hidden;      /* hide scroll */
+  overflow: hidden;
 }
 
 .iframe-wrapper iframe {
-  width: 350px;          /* original iframe width */
-  height: 90px;          /* original iframe height */
+  width: 350px;
+  height: 90px;
   border: none;
-  transform-origin: 0 0; /* scale from top-left */
+  transform-origin: 0 0;
   display: block;
 }
 
-/* Scale iframe on smaller screens */
 @media (max-width: 400px) {
-  .iframe-wrapper iframe {
-    transform: scale(0.85);
-  }
+  .iframe-wrapper iframe { transform: scale(0.85); }
 }
 
 @media (max-width: 360px) {
-  .iframe-wrapper iframe {
-    transform: scale(0.8);
-  }
+  .iframe-wrapper iframe { transform: scale(0.8); }
 }
 
 @media (max-width: 320px) {
-  .iframe-wrapper iframe {
-    transform: scale(0.7);
-  }
+  .iframe-wrapper iframe { transform: scale(0.7); }
 }
 
 /* ====================== Responsive Adjustments ====================== */
 @media (max-width: 400px) {
-  .card {
-    padding: 20px;
-  }
-
-  .save-contact img {
-    max-width: 90%;  /* nearly full width on small screens */
-  }
-
+  .card { padding: 20px; }
+  .save-contact a.glow img { max-width: 90%; }
   .credentials {
     grid-auto-flow: column;
     grid-auto-columns: 80px;
     gap: 8px;
   }
-
-  footer {
-    font-size: 11px;
-  }
+  footer { font-size: 11px; }
 }
 
 @media (max-width: 320px) {
-  .save-contact img {
-    max-width: 100%; /* fully span card width on very small screens */
-  }
-
-  .contact {
-    font-size: 13px;
-  }
-
-  a.button {
-    font-size: 14px;
-    padding: 10px;
-  }
+  .save-contact a.glow img { max-width: 100%; }
+  .contact { font-size: 13px; }
+  a.button { font-size: 14px; padding: 10px; }
 }
