@@ -56,36 +56,28 @@ a.button:hover {
 }
 
 /* ====================== Save Contact / QR ====================== */
-.save-contact {
-  margin: 25px 0;
-  text-align: center;
-}
-
-.qr-wrapper {
+.save-contact a.glow {
   display: inline-block;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #1e293b, #334155);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  border-radius: 16px;  /* rounded corners for QR */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 2.5s infinite alternate;
 }
 
-.qr-wrapper:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.45);
-}
-
-.qr-wrapper:active {
-  transform: scale(0.98);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-.save-contact img {
+.save-contact a.glow img {
   display: block;
   width: 100%;
-  max-width: 300px;   /* larger than before */
+  max-width: 300px;   /* desktop max width */
   height: auto;
   margin: auto;
   border-radius: 16px;
+}
+
+.save-contact a.glow:hover,
+.save-contact a.glow:active {
+  animation: none; 
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.8),
+              0 0 80px rgba(0, 200, 255, 0.4);
+  transform: scale(1.05);
 }
 
 /* ====================== Animated Glow ====================== */
