@@ -121,19 +121,39 @@ a.button:hover {
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
 }
 
-/* ====================== Responsive iframe wrapper ====================== */
+/* ====================== Responsive iframe with scale ====================== */
 .iframe-wrapper {
   width: 100%;
-  max-width: 350px;   /* keeps it from being too wide */
+  max-width: 350px;
   margin: 20px auto 0;
+  overflow: hidden;      /* hide scroll */
 }
 
 .iframe-wrapper iframe {
-  width: 100%;
-  height: auto;       /* scale proportionally */
-  min-height: 90px;   /* original iframe height as minimum */
+  width: 350px;          /* original iframe width */
+  height: 90px;          /* original iframe height */
   border: none;
+  transform-origin: 0 0; /* scale from top-left */
   display: block;
+}
+
+/* Scale iframe on smaller screens */
+@media (max-width: 400px) {
+  .iframe-wrapper iframe {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 360px) {
+  .iframe-wrapper iframe {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 320px) {
+  .iframe-wrapper iframe {
+    transform: scale(0.7);
+  }
 }
 
 /* ====================== Responsive Adjustments ====================== */
